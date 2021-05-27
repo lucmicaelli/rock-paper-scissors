@@ -1,19 +1,24 @@
 # game.py
 import random
+import os
+from dotenv import load_dotenv
 
+load_dotenv() #> loads contents of the .env file into the script's environment
+
+print("Hello ", os.getenv("USER_NAME"))
 print("Rock, Paper, Scissors, Shoot!")
 user_choice = input ("Choose one of 'Rock', 'Paper', 'Scissors': ")
 
 if (user_choice == "Rock") or (user_choice == "Paper") or (user_choice == "Scissors"):
-    print("VALID entry, Your Choice: ", user_choice)
+    print("VALID entry! Your choice is: ", user_choice)
 
 else:
-    print("This is not a valid entry... try again!")
+    print("Sorry this is not a valid entry... please check for typos and try again!")
     quit()
 
 valid_options = ["Rock","Paper","Scissors"]
 computer_choice = random.choice(valid_options)
-print ("the computer choice is :", computer_choice)
+print ("the computer choice is:", computer_choice)
 
 if (user_choice == "Rock") and (computer_choice == "Scissors"):
     print ("You WIN!")
