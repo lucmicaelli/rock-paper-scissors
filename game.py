@@ -5,7 +5,12 @@ from dotenv import load_dotenv
 
 load_dotenv() #> loads contents of the .env file into the script's environment
 
-print("Hello ", os.getenv("USER_NAME"))
+if (os.getenv("USER_NAME") is not None):
+    print("Hello ", os.getenv("USER_NAME"))
+
+else:
+    print ("see readme file to add your name")
+
 print("Rock, Paper, Scissors, Shoot!")
 user_choice = input ("Choose one of 'Rock', 'Paper', 'Scissors': ")
 
